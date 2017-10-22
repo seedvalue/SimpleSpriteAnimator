@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 835ca1592522a4db9917e15e8556be3c
-timeCreated: 1508702381
+timeCreated: 1508707366
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -25,6 +25,12 @@ TextureImporter:
     21300036: Zombey_0_jump_04
     21300038: Zombey_0_jump_05
     21300040: Zombey_0_jump_06
+    21300042: Zombey_0_attack_00
+    21300044: Zombey_0_attack_01
+    21300046: Zombey_0_attack_02
+    21300048: Zombey_0_attack_03
+    21300050: Zombey_0_attack_04
+    21300052: Zombey_0_attack_05
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -374,6 +380,84 @@ TextureImporter:
         y: 694
         width: 76
         height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_attack_00
+      rect:
+        serializedVersion: 2
+        x: 836
+        y: 133
+        width: 95
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_attack_01
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 133
+        width: 93
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_attack_02
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 133
+        width: 86
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_attack_03
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 133
+        width: 89
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_attack_04
+      rect:
+        serializedVersion: 2
+        x: 1237
+        y: 133
+        width: 88
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_attack_05
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 133
+        width: 80
+        height: 137
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

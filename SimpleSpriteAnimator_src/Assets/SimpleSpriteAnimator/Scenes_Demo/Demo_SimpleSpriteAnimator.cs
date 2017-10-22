@@ -73,6 +73,18 @@ public class Demo_SimpleSpriteAnimator : MonoBehaviour
 
 
 
+	public void OnClicked_ZombeyAttack ()
+	{
+		Debug.Log ("Demo_SimpleSpriteAnimator : OnClicked_ZombeyAttack");
+
+		if (m_ZombeyAnimator != null) {
+			m_ZombeyAnimator.PlayAnimation ("Attack");
+		} else {
+			Debug.LogError ("Demo_SimpleSpriteAnimator : OnClicked_ZombeyJump : m_ZombeyAnimator == null. Need setup with inspector to pulic value");
+		}
+	}
+
+
 	#endregion
 
 

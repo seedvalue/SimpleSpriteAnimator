@@ -41,6 +41,14 @@ namespace SeedValue
 
 		public void Play ()
 		{
+
+			if (m_AnimationType == AnimationType.LOOP && m_isNowPlaying == true) {
+				//when loop already started we dont need run again
+				return;
+			}
+
+
+
 			m_CurrentFrame = 0;
 
 			if (m_isNowPlaying == true) {
