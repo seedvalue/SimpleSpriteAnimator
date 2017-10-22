@@ -13,6 +13,9 @@ namespace SeedValue
 
 		public bool m_PlayInStart = true;
 
+		[Header ("When once settings:")]
+		public SimpleSpriteOneAnimation m_PlayedAfterCurrentFinished;
+
 
 		[Header ("When loop settings:")]
 		// in first run from 0 to last frame, but when loop end, its will start loop from other frame;
@@ -25,6 +28,7 @@ namespace SeedValue
 
 
 		[Header ("Debug: not edit, filled auto")]
+		public SimpleSpriteAnimator m_CurrentRootAnimator;
 		public List<GameObject> m_SpritesList;
 		public int m_CurrentFrame = 0;
 		public bool m_isNowPlaying = false;
@@ -47,6 +51,8 @@ namespace SeedValue
 
 			m_isNowPlaying = true;
 		}
+
+
 
 
 
@@ -168,7 +174,22 @@ namespace SeedValue
 					TypePingPong ();
 					yield return  new WaitForSeconds (m_WaitBetweenFramesTime);
 					break;
+				
+				
+				case AnimationType.ONCE:
+
+					TypeOnce ();
+					yield return  new WaitForSeconds (m_WaitBetweenFramesTime);
+					break;
+
+				
+				
+				
 				}
+
+
+
+
 
 
 			}
@@ -219,6 +240,41 @@ namespace SeedValue
 
 
 
+
+		private void TypeOnce ()
+		{
+			this.ShowFrame (m_CurrentFrame);
+			m_CurrentFrame++;
+			if (m_CurrentFrame > m_SpritesList.Count - 1) {
+				m_CurrentFrame = 0;
+				this.OnOnceFinished ();
+				this.Stop ();
+			}
+		}
+
+
+
+
+
+
+		private void OnOnceFinished ()
+		{
+			if (m_PlayedAfterCurrentFinished == null) {
+				Debug.LogError ("SimpleSpriteOneAnimation : OnOnceFinished : m_PlayedAfterCurrentFinished == null. Need setup in inspector this value. Animation name = " + transform.name);
+			} else {
+				if (m_CurrentRootAnimator) {
+					m_CurrentRootAnimator.PlayAnimation (m_PlayedAfterCurrentFinished.transform.name);
+				} else {
+					Debug.LogError ("SimpleSpriteOneAnimation : OnOnceFinished : m_CurrentRootAnimator == null");
+				}
+			}
+
+		}
+
+
+
+
+
 		private void ShowFrame (int _frame)
 		{
 			for (int i = 0; i <= m_SpritesList.Count - 1; i++) {
@@ -240,6 +296,19 @@ namespace SeedValue
 		//				m_SpritesList [i].SetActive (false);
 		//			}
 		//		}
+
+
+
+
+		 
+		//called from root animator Start() to every one animation. (for run after finished some other animation)
+		public void SetCurrentAnimator (SimpleSpriteAnimator _animator)
+		{
+			m_CurrentRootAnimator = _animator;
+		}
+
+
+
 
 
 		void OnEnable ()

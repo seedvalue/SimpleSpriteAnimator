@@ -95,6 +95,7 @@ namespace SeedValue
 			m_AllAnimations = new Dictionary<string, SimpleSpriteOneAnimation> ();
 
 			foreach (SimpleSpriteOneAnimation _oneTmp in m_AllAnimList) {
+				_oneTmp.SetCurrentAnimator (this);
 				m_AllAnimations.Add (_oneTmp.transform.name, _oneTmp);
 				_oneTmp.gameObject.SetActive (false);
 			}
