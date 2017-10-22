@@ -85,6 +85,19 @@ public class Demo_SimpleSpriteAnimator : MonoBehaviour
 	}
 
 
+
+
+	public void OnClicked_ZombeyDead ()
+	{
+		Debug.Log ("Demo_SimpleSpriteAnimator : OnClicked_ZombeyDead");
+
+		if (m_ZombeyAnimator != null) {
+			m_ZombeyAnimator.PlayAnimation ("Dead");
+		} else {
+			Debug.LogError ("Demo_SimpleSpriteAnimator : OnClicked_ZombeyDead : m_ZombeyAnimator == null. Need setup with inspector to pulic value");
+		}
+	}
+
 	#endregion
 
 

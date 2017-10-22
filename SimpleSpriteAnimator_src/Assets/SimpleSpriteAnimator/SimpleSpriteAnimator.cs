@@ -58,7 +58,7 @@ namespace SeedValue
 
 				if (m_CurrentPlaing != null && m_CurrentPlaing != m_AllAnimations [_name]) {
 					//stop previuse, but if playing same, not stop
-					m_CurrentPlaing.Stop ();
+					m_CurrentPlaing.Stop (true);
 				}
 
 				m_CurrentPlaing = m_AllAnimations [_name];

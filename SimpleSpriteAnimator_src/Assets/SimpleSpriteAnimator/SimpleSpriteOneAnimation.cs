@@ -11,20 +11,31 @@ namespace SeedValue
 
 		Transform m_RootForSprites;
 
-		public bool m_PlayInStart = true;
+		[Header ("Animation type:")]
+		public AnimationType m_AnimationType = AnimationType.LOOP;
+		public float m_WaitBetweenFramesTime = 0.5F;
+		//	public bool m_PlayInStart = true;
 
-		[Header ("When once settings:")]
-		public SimpleSpriteOneAnimation m_PlayedAfterCurrentFinished;
 
 
-		[Header ("When loop settings:")]
+
+		[Header ("When LOOP settings:")]
+
 		// in first run from 0 to last frame, but when loop end, its will start loop from other frame;
 		public int m_LoopedFrom = 0;
 
 
-		public AnimationType m_AnimationType = AnimationType.LOOP;
 
-		public float m_WaitBetweenFramesTime = 0.5F;
+
+
+
+		[Header ("When ONCE settings:")]
+		public bool m_IsNeedPlayOtherAnimationAfter = false;
+		public SimpleSpriteOneAnimation m_PlayedAfterCurrentFinished;
+
+		[Space]
+
+
 
 
 		[Header ("Debug: not edit, filled auto")]
@@ -64,15 +75,17 @@ namespace SeedValue
 
 
 
-		public void Stop ()
+		public void Stop (bool _isNeedHide)
 		{
 			StopAllCoroutines ();
-			m_CurrentFrame = 0;
+			//m_CurrentFrame = 0;
 			_isIncreasePingPong = true;
 
-			ShowFrame (m_CurrentFrame);
+			//ShowFrame (m_CurrentFrame);
 			m_isNowPlaying = false;
-			transform.gameObject.SetActive (false);
+
+			transform.gameObject.SetActive (!_isNeedHide);
+
 		}
 
 
@@ -256,7 +269,7 @@ namespace SeedValue
 			if (m_CurrentFrame > m_SpritesList.Count - 1) {
 				m_CurrentFrame = 0;
 				this.OnOnceFinished ();
-				this.Stop ();
+				this.Stop (false);
 			}
 		}
 
@@ -267,6 +280,10 @@ namespace SeedValue
 
 		private void OnOnceFinished ()
 		{
+			if (m_IsNeedPlayOtherAnimationAfter == false) {
+				return;
+			}
+
 			if (m_PlayedAfterCurrentFinished == null) {
 				Debug.LogError ("SimpleSpriteOneAnimation : OnOnceFinished : m_PlayedAfterCurrentFinished == null. Need setup in inspector this value. Animation name = " + transform.name);
 			} else {
@@ -339,9 +356,9 @@ namespace SeedValue
 		{
 
 
-			if (m_PlayInStart == true) {
-				StartCoroutine (StartAll ());
-			}
+			//if (m_PlayInStart == true) {
+			//	StartCoroutine (StartAll ());
+			//}
 
 		}
 

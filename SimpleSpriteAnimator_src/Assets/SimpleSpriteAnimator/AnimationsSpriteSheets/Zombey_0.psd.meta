@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 835ca1592522a4db9917e15e8556be3c
-timeCreated: 1508707366
+timeCreated: 1508709187
 licenseType: Pro
 TextureImporter:
   fileIDToRecycleName:
@@ -31,6 +31,14 @@ TextureImporter:
     21300048: Zombey_0_attack_03
     21300050: Zombey_0_attack_04
     21300052: Zombey_0_attack_05
+    21300054: Zombey_0_dead_00
+    21300056: Zombey_0_dead_01
+    21300058: Zombey_0_dead_02
+    21300060: Zombey_0_dead_03
+    21300062: Zombey_0_dead_04
+    21300064: Zombey_0_dead_05
+    21300066: Zombey_0_dead_06
+    21300068: Zombey_0_dead_07
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -120,8 +128,8 @@ TextureImporter:
         y: 725
         width: 80
         height: 136
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5704401, y: 0.06078518}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -133,8 +141,8 @@ TextureImporter:
         y: 725
         width: 79
         height: 136
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.5784649, y: 0.056641523}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -146,8 +154,8 @@ TextureImporter:
         y: 724
         width: 85
         height: 137
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.57955575, y: 0.051651336}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -159,8 +167,8 @@ TextureImporter:
         y: 724
         width: 84
         height: 137
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.60733724, y: 0.05576475}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -172,8 +180,8 @@ TextureImporter:
         y: 490
         width: 93
         height: 138
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.50635356, y: 0.063263826}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -185,8 +193,8 @@ TextureImporter:
         y: 490
         width: 88
         height: 138
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.39256772, y: 0.04613705}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -198,8 +206,8 @@ TextureImporter:
         y: 490
         width: 82
         height: 138
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.2838239, y: 0.050418798}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -211,8 +219,8 @@ TextureImporter:
         y: 490
         width: 92
         height: 136
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.27520886, y: 0.05249652}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -224,8 +232,8 @@ TextureImporter:
         y: 490
         width: 88
         height: 135
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.24484807, y: 0.049181677}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -237,8 +245,8 @@ TextureImporter:
         y: 334
         width: 112
         height: 142
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.27314487, y: 0.03811624}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -250,8 +258,8 @@ TextureImporter:
         y: 334
         width: 123
         height: 142
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.37029484, y: 0.03811624}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -263,8 +271,8 @@ TextureImporter:
         y: 334
         width: 111
         height: 141
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.38288948, y: 0.047412414}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -276,8 +284,8 @@ TextureImporter:
         y: 333
         width: 93
         height: 141
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.17597026, y: 0.047412194}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -285,12 +293,12 @@ TextureImporter:
       name: Zombey_0_run_09
       rect:
         serializedVersion: 2
-        x: 1287
-        y: 333
+        x: 1288
+        y: 332
         width: 102
         height: 139
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.30304074, y: 0.019645637}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -302,8 +310,8 @@ TextureImporter:
         y: 694
         width: 73
         height: 169
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.4234477, y: 0.04946737}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -315,8 +323,8 @@ TextureImporter:
         y: 694
         width: 85
         height: 169
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.40049404, y: 0.04018858}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -328,8 +336,8 @@ TextureImporter:
         y: 694
         width: 82
         height: 169
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.44842827, y: 0.008908966}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -341,8 +349,8 @@ TextureImporter:
         y: 694
         width: 84
         height: 169
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.393017, y: -0.012987126}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -354,8 +362,8 @@ TextureImporter:
         y: 694
         width: 74
         height: 169
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.46428454, y: 0.01829285}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -367,8 +375,8 @@ TextureImporter:
         y: 694
         width: 68
         height: 169
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.49222878, y: 0.052700788}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -380,8 +388,8 @@ TextureImporter:
         y: 694
         width: 76
         height: 169
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.41653442, y: 0.033932656}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -393,8 +401,8 @@ TextureImporter:
         y: 133
         width: 95
         height: 136
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.24498934, y: 0.048151802}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -406,8 +414,8 @@ TextureImporter:
         y: 133
         width: 93
         height: 137
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.2458588, y: 0.051449962}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -419,8 +427,8 @@ TextureImporter:
         y: 133
         width: 86
         height: 137
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.27326718, y: 0.055762965}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -432,8 +440,8 @@ TextureImporter:
         y: 133
         width: 89
         height: 137
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.28090984, y: 0.055762965}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -445,8 +453,8 @@ TextureImporter:
         y: 133
         width: 88
         height: 137
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.2717063, y: 0.051449962}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
@@ -458,8 +466,112 @@ TextureImporter:
         y: 133
         width: 80
         height: 137
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.3005783, y: 0.06007597}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_dead_00
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 381
+        width: 72
+        height: 136
+      alignment: 9
+      pivot: {x: 0.49043718, y: 0.06461177}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_dead_01
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 380
+        width: 86
+        height: 138
+      alignment: 9
+      pivot: {x: 0.31586084, y: 0.07092175}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_dead_02
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 379
+        width: 111
+        height: 139
+      alignment: 9
+      pivot: {x: 0.18383597, y: 0.06905535}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_dead_03
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 380
+        width: 135
+        height: 137
+      alignment: 9
+      pivot: {x: 0.035433847, y: 0.05783727}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_dead_04
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 381
+        width: 157
+        height: 97
+      alignment: 9
+      pivot: {x: 0.047252875, y: 0.09624206}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_dead_05
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 299
+        width: 145
+        height: 66
+      alignment: 9
+      pivot: {x: 0.041988924, y: 0.13410719}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_dead_06
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 296
+        width: 157
+        height: 63
+      alignment: 9
+      pivot: {x: 0.015275312, y: 0.14965577}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Zombey_0_dead_07
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 292
+        width: 164
+        height: 69
+      alignment: 9
+      pivot: {x: 0.044639587, y: 0.241835}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
