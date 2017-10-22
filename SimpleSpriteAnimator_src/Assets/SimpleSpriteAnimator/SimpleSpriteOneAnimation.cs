@@ -58,7 +58,7 @@ namespace SeedValue
 				return;
 			}
 
-
+			m_IsPaused = false;
 
 			m_CurrentFrame = 0;
 
@@ -70,6 +70,25 @@ namespace SeedValue
 
 			m_isNowPlaying = true;
 		}
+
+
+
+
+		public void Pause ()
+		{
+			//StopAllCoroutines ();
+			//m_CurrentFrame = 0;
+			//_isIncreasePingPong = true;
+
+			//ShowFrame (m_CurrentFrame);
+			m_isNowPlaying = false;
+			m_IsPaused = true;
+
+			//transform.gameObject.SetActive (!_isNeedHide);
+
+		}
+
+
 
 
 
@@ -158,7 +177,7 @@ namespace SeedValue
 
 
 
-
+		public bool m_IsPaused = false;
 
 		//for handle change type on fly when tests in inspector, or may be will changed with script
 		private AnimationType m_AnimationTypeTMP;
@@ -171,7 +190,7 @@ namespace SeedValue
 
 
 
-			while (true) {
+			while (m_IsPaused == false) {
 
 				if (m_AnimationTypeTMP != m_AnimationType) {
 					// have changed, we reset to zero
@@ -267,9 +286,9 @@ namespace SeedValue
 			this.ShowFrame (m_CurrentFrame);
 			m_CurrentFrame++;
 			if (m_CurrentFrame > m_SpritesList.Count - 1) {
-				m_CurrentFrame = 0;
+				//m_CurrentFrame = 0;
 				this.OnOnceFinished ();
-				this.Stop (false);
+
 			}
 		}
 
@@ -281,18 +300,26 @@ namespace SeedValue
 		private void OnOnceFinished ()
 		{
 			if (m_IsNeedPlayOtherAnimationAfter == false) {
+				this.Pause ();
+				//this.Stop (false);
 				return;
+			} else {
+				//need play next animation
+
+				if (m_PlayedAfterCurrentFinished == null) {
+					Debug.LogError ("SimpleSpriteOneAnimation : OnOnceFinished : m_PlayedAfterCurrentFinished == null. Need setup in inspector this value. Animation name = " + transform.name);
+				} else {
+					if (m_CurrentRootAnimator) {
+						m_CurrentRootAnimator.PlayAnimation (m_PlayedAfterCurrentFinished.transform.name);
+					} else {
+						Debug.LogError ("SimpleSpriteOneAnimation : OnOnceFinished : m_CurrentRootAnimator == null");
+					}
+				}
+
+
 			}
 
-			if (m_PlayedAfterCurrentFinished == null) {
-				Debug.LogError ("SimpleSpriteOneAnimation : OnOnceFinished : m_PlayedAfterCurrentFinished == null. Need setup in inspector this value. Animation name = " + transform.name);
-			} else {
-				if (m_CurrentRootAnimator) {
-					m_CurrentRootAnimator.PlayAnimation (m_PlayedAfterCurrentFinished.transform.name);
-				} else {
-					Debug.LogError ("SimpleSpriteOneAnimation : OnOnceFinished : m_CurrentRootAnimator == null");
-				}
-			}
+
 
 		}
 
@@ -313,15 +340,7 @@ namespace SeedValue
 
 
 
-
-
-		//		private void HideAllFrames ()
-		//		{
-		//			for (int i = 0; i < m_SpritesList.Count - 1; i++) {
-		//				m_SpritesList [i].SetActive (false);
-		//			}
-		//		}
-
+	
 
 
 
