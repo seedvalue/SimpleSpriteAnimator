@@ -1,5 +1,5 @@
 # SimpleSpriteAnimator
-Simple sprites animation for Unity 3d. It allow to create base classic sprites animations.
+Simple sprites animation for Unity 3d. It allow to create base classic sprites animations. Not used “Unity Animator”, its just show/hide sprites (GameObjects) in hierarchy.
 
 
 ## Animations types
@@ -13,3 +13,7 @@ From 10 to 20 - it “run loop”. So in first we play 0-10, and loop only 11-20
 - Once, with allow play other animation when current “once animation” is end (can disable/enable if need).
 For example we have “attack animation”, when attack is finished its need play “idle”.
 
+
+## Its support lot of animations per object.
+Have DEMO scene for know how it work. 1 player have animations run, idle, attack, etc…
+For example we have “attack animation”, when attack is finished its need play “idle”.
