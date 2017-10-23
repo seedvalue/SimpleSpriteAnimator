@@ -4,6 +4,7 @@ SimpleSpriteAnimator_src/Temp/*
 SimpleSpriteAnimator_src/ProjectSettings/*
 SimpleSpriteAnimator_src/obj/*
 
+*.userprefs
 *.sln
 *.csproj
 *.DS_Store
