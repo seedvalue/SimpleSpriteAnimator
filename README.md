@@ -13,6 +13,7 @@ From 10 to 20 - it “run loop”. So in first we play 0-10, and loop only 11-20
 - Once, with allow play other animation when current “once animation” is end (can disable/enable if need).
 For example we have “attack animation”, when attack is finished its need play “idle”.
 
+- Can delayed random time to start first animation
 
 ## Its support lot of animations per object.
 Have DEMO scene for know how it work. 1 player have animations run, idle, attack, etc…
