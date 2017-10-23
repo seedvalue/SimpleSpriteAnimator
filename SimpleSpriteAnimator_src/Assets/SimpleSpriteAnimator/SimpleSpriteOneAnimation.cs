@@ -14,6 +14,11 @@ namespace SeedValue
 		[Header ("Animation type:")]
 		public AnimationType m_AnimationType = AnimationType.LOOP;
 		public float m_WaitBetweenFramesTime = 0.5F;
+
+
+	
+
+
 		//	public bool m_PlayInStart = true;
 
 

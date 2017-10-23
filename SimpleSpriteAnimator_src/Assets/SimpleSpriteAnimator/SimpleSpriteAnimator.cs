@@ -19,6 +19,14 @@ namespace SeedValue
 		public string m_OnStartAnimationName = "Idle";
 
 
+		[Header ("Delay start:")]
+		public bool m_IsdelayedStart = false;
+		public float m_IsdelayedTimeFrom = 0F;
+		public float m_IsdelayedTimeTo = 0F;
+
+
+
+
 
 		[Header ("Debug all animations:")]
 		public List<SimpleSpriteOneAnimation> m_AllAnimList;
@@ -32,6 +40,13 @@ namespace SeedValue
 			yield return StartCoroutine (ScanChildsAnimations ());
 
 			if (m_PlayOnStartAnimation == true) {
+
+				if (m_IsdelayedStart == true) {
+					float _randTime = Random.Range (m_IsdelayedTimeFrom, m_IsdelayedTimeTo);
+					yield return new WaitForSeconds (_randTime);
+				}
+
+
 				this.PlayAnimation (m_OnStartAnimationName);
 			}
 		}
