@@ -1,0 +1,9 @@
+
+SimpleSpriteAnimator_src/Library/*
+SimpleSpriteAnimator_src/Temp/*
+SimpleSpriteAnimator_src/ProjectSettings/*
+SimpleSpriteAnimator_src/obj/*
+
+*.sln
+*.csproj
+*.DS_Store
