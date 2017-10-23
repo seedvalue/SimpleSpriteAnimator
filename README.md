@@ -16,4 +16,3 @@ For example we have “attack animation”, when attack is finished its need pla
 
 ## Its support lot of animations per object.
 Have DEMO scene for know how it work. 1 player have animations run, idle, attack, etc…
-For example we have “attack animation”, when attack is finished its need play “idle”.
