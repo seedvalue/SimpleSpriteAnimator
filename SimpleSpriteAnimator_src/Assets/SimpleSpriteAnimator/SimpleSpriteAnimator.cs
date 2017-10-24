@@ -136,7 +136,20 @@ namespace SeedValue
 
 
 
+		void OnEnable ()
+		{
+			//	if (m_isNowPlaying == true) {
+			//StartCoroutine (InitAnimations ());
+			//	}
 
+			//try to play again if object have disabled before
+			if (m_CurrentPlaing != null) {
+//				m_CurrentPlaing.gameObject.SetActive (true);
+//				m_CurrentPlaing.Play ();
+
+				StartCoroutine (InitAnimations ());
+			}
+		}
 
 
 		void Awake ()

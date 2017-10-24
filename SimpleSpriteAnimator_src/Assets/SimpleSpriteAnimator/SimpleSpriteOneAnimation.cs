@@ -70,7 +70,8 @@ namespace SeedValue
 			if (m_isNowPlaying == true) {
 				//not start Co
 			} else {
-				StartCoroutine (StartAll ());
+				//StartCoroutine (StartAll ());
+				AnimationLoop ();
 			}
 
 			m_isNowPlaying = true;
@@ -86,7 +87,7 @@ namespace SeedValue
 			//_isIncreasePingPong = true;
 
 			//ShowFrame (m_CurrentFrame);
-			m_isNowPlaying = false;
+			m_isNowPlaying = true;
 			m_IsPaused = true;
 
 			//transform.gameObject.SetActive (!_isNeedHide);
@@ -119,7 +120,10 @@ namespace SeedValue
 		private IEnumerator StartAll ()
 		{
 			//	yield return StartCoroutine (ScanChildsRootCo ());
-			yield return StartCoroutine (AnimationLoop ());
+			Debug.Log ("StartAll");
+			//	yield return StartCoroutine (AnimationLoopCo ());
+
+			yield return null;
 
 		}
 
@@ -159,6 +163,8 @@ namespace SeedValue
 
 		private void ScanChildsRoot ()
 		{
+
+
 			if (_isChildsScanned == true) {
 				return;
 			}
@@ -188,11 +194,12 @@ namespace SeedValue
 		private AnimationType m_AnimationTypeTMP;
 
 
-		private IEnumerator AnimationLoop ()
+		private IEnumerator AnimationLoopCo ()
 		{
 			m_AnimationTypeTMP = m_AnimationType;
 
 
+			Debug.Log ("AnimationLoop");
 
 
 			while (m_IsPaused == false) {
@@ -209,6 +216,8 @@ namespace SeedValue
 				case AnimationType.LOOP:
 
 					TypeLoop ();
+					Debug.Log ("AnimationLoop");
+
 					yield return  new WaitForSeconds (m_WaitBetweenFramesTime);
 					break;
 				
@@ -242,16 +251,93 @@ namespace SeedValue
 
 
 
+		//for can change on fly in editor //to Fixed update
+		private void CheckForTypeChanged ()
+		{
+
+			if (m_AnimationTypeTMP != m_AnimationType) {
+				// have changed, we reset to zero
+				m_CurrentFrame = 0;
+				_isIncreasePingPong = true;
+				CancelInvoke ();
+				AnimationLoop ();
+			}
+		}
+
+
+
+		private void AnimationLoop ()
+		{
+			m_AnimationTypeTMP = m_AnimationType;
+			m_IsPaused = false;
+			m_CurrentFrame = 0;
+			//Debug.Log ("AnimationLoop");
+
+
+			//	while (m_IsPaused == false) {
+
+
+
+			switch (m_AnimationType) {
+
+			case AnimationType.LOOP:
+
+				InvokeRepeating ("TypeLoop", 0, m_WaitBetweenFramesTime);
+				//TypeLoop ();
+
+				Debug.Log ("AnimationLoop");
+
+			//	yield return  new WaitForSeconds (m_WaitBetweenFramesTime);
+				break;
+
+
+
+			case AnimationType.PING_PONG:
+
+				InvokeRepeating ("TypePingPong", 0, m_WaitBetweenFramesTime);
+				//TypePingPong ();
+			//	yield return  new WaitForSeconds (m_WaitBetweenFramesTime);
+				break;
+
+
+			case AnimationType.ONCE:
+				InvokeRepeating ("TypeOnce", 0, m_WaitBetweenFramesTime);
+
+				//TypeOnce ();
+				//yield return  new WaitForSeconds (m_WaitBetweenFramesTime);
+				break;
+
+
+
+
+			//	}
+
+
+
+
+
+
+			}
+		}
+
+
+
 
 
 
 		private void TypeLoop ()
 		{
+			if (m_IsPaused == true) {
+				CancelInvoke ();
+			}
+			
 			this.ShowFrame (m_CurrentFrame);
 			m_CurrentFrame++;
 			if (m_CurrentFrame > m_SpritesList.Count - 1) {
 				m_CurrentFrame = m_LoopedFrom;
 			}
+
+
 		}
 
 
@@ -261,6 +347,10 @@ namespace SeedValue
 
 		private void TypePingPong ()
 		{
+			if (m_IsPaused == true) {
+				CancelInvoke ();
+			}
+
 			this.ShowFrame (m_CurrentFrame);
 
 			if (_isIncreasePingPong == true) {
@@ -288,10 +378,15 @@ namespace SeedValue
 
 		private void TypeOnce ()
 		{
+			if (m_IsPaused == true) {
+				CancelInvoke ();
+			}
+
 			this.ShowFrame (m_CurrentFrame);
 			m_CurrentFrame++;
 			if (m_CurrentFrame > m_SpritesList.Count - 1) {
-				//m_CurrentFrame = 0;
+				CancelInvoke ();
+				m_CurrentFrame = m_SpritesList.Count - 1;
 				this.OnOnceFinished ();
 
 			}
@@ -362,7 +457,31 @@ namespace SeedValue
 
 		void OnEnable ()
 		{
+			Debug.Log ("SimpleSpriteOneAnimation : OnEnable");
+
 			ScanChildsRoot ();
+
+//			if (m_isNowPlaying == true) {
+//				this.Stop (false);
+//				StartCoroutine (StartAll ());
+//			}
+
+
+
+			//this.StartAll ();
+			if (m_isNowPlaying == true) {
+				//StopAllCoroutines ();
+				//this.StartAll ();
+				AnimationLoop ();
+
+			}
+		}
+
+
+
+		void OnDisable ()
+		{
+			CancelInvoke ();
 		}
 
 
@@ -387,6 +506,11 @@ namespace SeedValue
 		}
 
 
+
+		void FixedUpdate ()
+		{
+			CheckForTypeChanged ();
+		}
 
 
 		public enum AnimationType
